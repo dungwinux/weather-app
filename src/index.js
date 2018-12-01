@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import LazyLoad from "react-lazy-load";
 
 import "./styles.css";
 
@@ -87,11 +88,21 @@ class App extends React.Component {
     }
     renderForcast() {
         const map_w = data => (
-            <div className="w_div float-up" key={data.dt}>
-                <h3>{this.renderTime(data)}</h3>
-                {this.renderImage(data)}
-                {this.renderMain(data)}
-            </div>
+            <LazyLoad
+                key={"Load-" + data.dt}
+                height={160}
+                debouce={false}
+                offsetVertical={320}
+                onContentVisible={() =>
+                    console.log(data.dt, " have been lazyloaded!")
+                }
+            >
+                <div className="w_div float-up" key={data.dt}>
+                    <h3>{this.renderTime(data)}</h3>
+                    {this.renderImage(data)}
+                    {this.renderMain(data)}
+                </div>
+            </LazyLoad>
         );
         let list = this.state.forecast.list.map(map_w);
         return list;
