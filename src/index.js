@@ -96,9 +96,6 @@ class App extends React.Component {
                 height={160}
                 debouce={false}
                 offsetVertical={320}
-                onContentVisible={() =>
-                    console.log(data.dt, " have been lazyloaded!")
-                }
             >
                 <div className="w_div float-up" key={data.dt}>
                     <h3>{this.renderTime(data)}</h3>
@@ -124,6 +121,7 @@ class App extends React.Component {
                 </div>
                 <h2 className="w_cen float-up">Dự báo</h2>
                 {this.renderForcast()}
+                <h5 className="w_cen">Powered by OpenWeatherMap</h5>
             </div>
         );
     }
