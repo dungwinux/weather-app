@@ -48,8 +48,11 @@ class App extends React.Component {
             "https://openweathermap.org/img/w/" + weather.icon + ".png";
         return (
             <div>
-                <img src={icon_url} className="w_img" />
-                <span className="w_img w_text">{weather.description}</span>
+                <img
+                    src={icon_url}
+                    className="w_img"
+                    alt={weather.description}
+                />
             </div>
         );
     }
