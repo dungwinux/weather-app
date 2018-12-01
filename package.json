@@ -4,6 +4,7 @@
   "description": "Demo weather-app",
   "keywords": [],
   "license": "MIT",
+  "homepage": "https://dungwinux.github.io/weather-app/",
   "main": "src/index.js",
   "dependencies": {
     "gh-pages": "^2.0.1",
