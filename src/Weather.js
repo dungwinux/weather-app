@@ -1,9 +1,9 @@
 import React from "react";
 import LazyLoad from "react-lazy-load";
-
 import "./styles.css";
 
-const api_key = "82227b19ade2744695daa8410297c9b6";
+require('dotenv').config()
+const api_key = process.env.REACT_APP_SECRET;
 
 async function GetData(url) {
     try {
@@ -14,7 +14,7 @@ async function GetData(url) {
         const json = await res.json();
         return json;
     } catch (err) {
-        console.log(err);
+        throw Error(err);
     }
 }
 
@@ -27,6 +27,8 @@ class App extends React.Component {
     }
 
     async componentDidMount() {
+        if (!api_key)
+            throw Error("Invalid API Key: " + JSON.stringify(api_key));
         const weather = await GetData(
             "https://api.openweathermap.org/data/2.5/weather?units=metric&q=Hanoi,VN&appid=" +
                 api_key

@@ -5,8 +5,13 @@
   "keywords": [],
   "license": "MIT",
   "homepage": "https://dungwinux.github.io/weather-app/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dungwinux/weather-app.git"
+  },
   "main": "src/index.js",
   "dependencies": {
+    "dotenv": "^6.1.0",
     "gh-pages": "^2.0.1",
     "react": "16.5.2",
     "react-dom": "16.5.2",
