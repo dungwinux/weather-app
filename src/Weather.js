@@ -93,8 +93,8 @@ class App extends React.Component {
             <LazyLoad
                 key={"Load-" + data.dt}
                 height={160}
-                debouce={false}
-                offsetVertical={320}
+                throttle={15}
+                offsetVertical={500}
             >
                 <div className="w_div float-up" key={data.dt}>
                     <h3>{this.renderTime(data)}</h3>
