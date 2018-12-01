@@ -35,7 +35,6 @@ class App extends React.Component {
             "https://api.openweathermap.org/data/2.5/forecast?units=metric&q=Hanoi,VN&appid=" +
                 api_key
         );
-        console.log(forecast);
         this.setState({
             data: weather,
             forecast: forecast
